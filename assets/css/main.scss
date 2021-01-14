@@ -1,0 +1,53 @@
+/* https://nuxtjs.org/guide/assets#webpacked */
+
+@charset 'utf-8';
+@import '~bulma/sass/utilities/initial-variables';
+
+$primary: #c9424b;
+
+@import '~bulma';
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4d4d4d #f5f5f5;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #4d4d4d;
+    border-radius: 20px;
+    border: 2px solid #f5f5f5;
+  }
+}
+
+// REVIEW: https://codepen.io/kathykato/pen/zYYRGRQ
+[data-content] {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  transition: clip-path 275ms ease;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.7) !important;
+
+    &::before {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+
+  &::before {
+    color: white;
+    position: absolute;
+    text-decoration: underline;
+    content: attr(data-content);
+    transition: clip-path 275ms ease;
+    clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+  }
+}
