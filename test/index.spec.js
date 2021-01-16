@@ -1,10 +1,10 @@
-import { mount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 
 import index from '@/pages/index.vue'
 import navbar from '@/components/navbar.vue'
 
 describe('index', () => {
-  const wrapper = mount(index)
+  const wrapper = shallowMount(index)
 
   it('renders successfully', () => expect(wrapper.vm).toBeTruthy())
 

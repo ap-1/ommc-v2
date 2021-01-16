@@ -1,0 +1,62 @@
+$brand-spacing: 3rem;
+
+#particles {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+canvas {
+  display: block;
+}
+
+[no-select] {
+  cursor: default;
+  user-select: none;
+}
+
+.container {
+  margin-top: -3.25rem !important;
+}
+
+.brand {
+  margin: 0;
+  margin-left: calc(#{$brand-spacing} / 2);
+  margin-right: calc(#{$brand-spacing} / -2);
+
+  font-size: 8rem;
+  text-shadow: 0 5px 10px #212121;
+  letter-spacing: $brand-spacing;
+}
+
+.down-arrow {
+  width: 40px;
+  height: 40px;
+  transition: 0.3s;
+  margin-top: -6rem;
+  border-radius: 12px;
+  background-color: white;
+  transform: rotate(45deg);
+
+  &:hover {
+    transform: rotate(45deg) scale(1.1);
+  }
+}
+
+.down-icon {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+
+  color: black;
+  transform: rotate(-45deg);
+  animation: bobble 1s infinite alternate;
+}
+
+@keyframes bobble {
+  from {
+    transform: rotate(-45deg) translateY(-2px);
+  }
+  to {
+    transform: rotate(-45deg) translateY(6px);
+  }
+}

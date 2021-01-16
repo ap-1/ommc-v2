@@ -9,21 +9,27 @@ $primary: #c9424b;
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #4d4d4d #f5f5f5;
+  scroll-behavior: smooth;
+  scrollbar-color: #4d4d4d #d6d6d6;
 
   &::-webkit-scrollbar {
     width: 10px;
   }
 
   &::-webkit-scrollbar-track {
-    background: #f5f5f5;
+    background: #d6d6d6;
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: #4d4d4d;
-    border-radius: 20px;
-    border: 2px solid #f5f5f5;
+    border: 2px solid #d6d6d6;
+    border-radius: 99px;
   }
+}
+
+#particles,
+[no-select] {
+  cursor: crosshair !important;
 }
 
 // REVIEW: https://codepen.io/kathykato/pen/zYYRGRQ

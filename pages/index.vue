@@ -1,90 +1,95 @@
 <template>
   <main>
-    <Particles
-      id="particles"
-      :options="{
-        fpsLimit: 60,
-        particles: {
-          number: {
-            value: 80,
-            density: {
-              enable: true,
-              value_area: 800,
-            },
-          },
-          color: {
-            value: '#ffffff',
-          },
-          shape: {
-            type: 'circle',
-            stroke: {
-              width: 0,
-              color: '#000000',
-            },
-          },
-          opacity: {
-            value: 0.5,
-            random: true,
-            anim: {
-              enable: true,
-              speed: 0.2,
-              opacity_min: 0.2,
-              sync: false,
-            },
-          },
-          size: {
-            value: 3,
-            random: true,
-          },
-          move: {
-            enable: true,
-            speed: 1,
-            direction: 'top-right',
-            random: true,
-            straight: true,
-            out_mode: 'out',
-            bounce: false,
-          },
-        },
-        interactivity: {
-          detect_on: 'window',
-          events: {
-            onhover: {
-              enable: true,
-              mode: 'grab',
-            },
-            onclick: {
-              enable: true,
-              mode: 'repulse',
-            },
-            resize: true,
-          },
-          modes: {
-            grab: {
-              distance: 125,
-              line_linked: {
-                opacity: 1,
+    <client-only>
+      <Particles
+        id="particles"
+        :options="{
+          fpsLimit: 60,
+          particles: {
+            number: {
+              value: 80,
+              density: {
+                enable: true,
+                value_area: 800,
               },
             },
-            repulse: {
-              distance: 225,
-              duration: 0.4,
+            color: {
+              value: '#ffffff',
+            },
+            shape: {
+              type: 'circle',
+              stroke: {
+                width: 0,
+                color: '#000000',
+              },
+            },
+            opacity: {
+              value: 0.5,
+              random: true,
+              anim: {
+                enable: true,
+                speed: 0.2,
+                opacity_min: 0.2,
+                sync: false,
+              },
+            },
+            size: {
+              value: 3,
+              random: true,
+            },
+            move: {
+              enable: true,
+              speed: 1,
+              direction: 'top-right',
+              random: true,
+              straight: true,
+              out_mode: 'out',
+              bounce: false,
             },
           },
-        },
-        retina_detect: true,
-      }"
-    />
+          interactivity: {
+            detect_on: 'window',
+            events: {
+              onhover: {
+                enable: true,
+                mode: 'grab',
+              },
+              onclick: {
+                enable: true,
+                mode: 'repulse',
+              },
+              resize: true,
+            },
+            modes: {
+              grab: {
+                distance: 125,
+                line_linked: {
+                  opacity: 1,
+                },
+              },
+              repulse: {
+                distance: 225,
+                duration: 0.4,
+              },
+            },
+          },
+          retina_detect: true,
+        }"
+      />
+    </client-only>
 
-    <section class="hero is-primary is-bold is-fullheight">
+    <section class="hero is-primary is-bold is-fullheight mb-6">
       <div class="hero-head">
-        <navbar :embed="true" />
+        <navbar :id="id" :embed="true" />
       </div>
 
       <div class="hero-body">
         <div class="container has-text-centered">
-          <p class="brand is-uppercase has-text-weight-light">ommc</p>
-          <p class="subtitle is-capitalized is-size-4 has-text-weight-light">
+          <p class="brand is-uppercase has-text-weight-light" no-select>ommc</p>
+          <p
+            class="subtitle is-capitalized is-size-4 has-text-weight-light"
+            no-select
+          >
             online monmouth math competition
           </p>
         </div>
@@ -92,75 +97,54 @@
 
       <div class="hero-foot is-flex is-justify-content-center">
         <div class="down-arrow">
-          <a class="down-icon material-icons">expand_more</a>
+          <a class="down-icon material-icons" href="#intro">expand_more</a>
         </div>
       </div>
     </section>
+
+    <fade-in title="intro">
+      <template #content>
+        <div class="column is-half">
+          <p class="title has-text-weight-light">Ready to join?</p>
+          <p class="subtitle is-size-4 has-text-weight-light">
+            Interact with the community and form teams on our discord.
+          </p>
+        </div>
+
+        <div class="column is-half">
+          <iframe
+            width="350"
+            height="500"
+            frameborder="0"
+            class="is-pulled-right"
+            allowtransparency="true"
+            src="//discord.com/widget?id=796756256022200350&amp;theme=dark"
+            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+          >
+          </iframe>
+        </div>
+      </template>
+    </fade-in>
   </main>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
+
 import navbar from '../components/navbar.vue'
+import fadeIn from '../components/fade-in.vue'
 
 export default Vue.extend({
   name: 'Home',
   layout: 'landing',
-  components: { navbar },
+  components: { navbar, fadeIn },
+
+  data() {
+    return {
+      id: 'prelim-nav',
+    }
+  },
 })
 </script>
 
-<style lang="scss" scoped>
-$brand-spacing: 3rem;
-
-#particles {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-}
-
-canvas {
-  display: block;
-}
-
-.container {
-  margin-top: -3.25rem !important;
-}
-
-.brand {
-  margin: 0;
-  margin-left: calc(#{$brand-spacing} / 2);
-  margin-right: calc(#{$brand-spacing} / -2);
-
-  font-size: 8rem;
-  text-shadow: 0 5px 10px #212121;
-  letter-spacing: $brand-spacing;
-}
-
-.down-arrow {
-  width: 40px;
-  height: 40px;
-  margin-top: -6rem;
-  border-radius: 12px;
-  background-color: white;
-  transform: rotate(45deg);
-}
-
-.down-icon {
-  margin-top: 0.5rem;
-  margin-left: 0.5rem;
-
-  color: black;
-  transform: rotate(-45deg);
-  animation: up-down 1s infinite alternate;
-}
-
-@keyframes up-down {
-  from {
-    transform: rotate(-45deg) translateY(-2px);
-  }
-  to {
-    transform: rotate(-45deg) translateY(6px);
-  }
-}
-</style>
+<style lang="scss" src="../assets/css/landing.scss" scoped></style>
