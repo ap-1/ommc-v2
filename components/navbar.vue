@@ -1,13 +1,14 @@
 <template>
   <header
-    class="navbar is-transparent"
+    :class="top && 'is-transparent'"
     aria-label="main navigation"
+    class="navbar is-fixed-top"
     role="navigation"
   >
     <div class="navbar-brand">
       <a
         class="navbar-item has-text-weight-bold"
-        :data-content="embed ? 'OMMC' : false"
+        :data-content="top ? 'OMMC' : false"
         href="/"
       >
         OMMC
@@ -29,16 +30,14 @@
 
     <div id="nav" class="navbar-menu" :class="isActive && 'is-active'">
       <div class="navbar-start">
-        <a class="navbar-item" :data-content="embed ? 'FAQs' : false"> FAQs </a>
+        <a class="navbar-item" :data-content="top ? 'FAQs' : false"> FAQs </a>
       </div>
 
       <div class="navbar-end">
-        <a class="navbar-item" data-content="Register" v-if="embed">
-          Register
-        </a>
-        <a class="navbar-item" data-content="Login" v-if="embed"> Login </a>
+        <a v-if="top" class="navbar-item" data-content="Register"> Register </a>
+        <a v-if="top" class="navbar-item" data-content="Login"> Login </a>
 
-        <div class="navbar-item" v-else>
+        <div v-else class="navbar-item">
           <div class="buttons">
             <a class="button is-primary has-text-weight-bold"> Register </a>
             <a class="button is-light"> Login </a>
@@ -57,12 +56,12 @@ interface IState {
 }
 
 export default Vue.extend({
-  name: 'navbar',
+  name: 'Navbar',
   props: {
-    embed: {
+    top: {
       type: Boolean,
       default() {
-        return false
+        return true
       },
     },
   },

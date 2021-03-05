@@ -1,6 +1,6 @@
 <template>
   <section class="hero is-fullheight mt-6">
-    <div class="hero-body" :id="title">
+    <div :id="title" class="hero-body">
       <div class="container">
         <div
           class="columns is-flex is-vcentered fade-in"
@@ -17,7 +17,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'fade-in',
+  name: 'FadeIn',
   props: {
     title: {
       type: String,
@@ -48,10 +48,10 @@ export default Vue.extend({
 .fade-in {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(5vh);
+  transform: translateY(4vh);
 
   &.activated {
-    animation: fade-in 1s ease-out 0.5s 1 normal forwards;
+    animation: fade-in 0.75s ease-out 0.5s 1 normal forwards;
   }
 }
 
@@ -59,7 +59,7 @@ export default Vue.extend({
   from {
     opacity: 0;
     visibility: hidden;
-    transform: translateY(5vh);
+    transform: translateY(4vh);
   }
   to {
     opacity: 1;
