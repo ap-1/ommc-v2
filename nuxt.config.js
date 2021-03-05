@@ -9,10 +9,44 @@ export default {
       { charset: 'utf-8' },
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { name: 'keywords', content: 'OMMC,online,monmouth,math,competition,nj' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'theme-color', content: '#c9424b' },
+      {
+        name: 'description',
+        hid: 'description',
+        content: 'Online Monmouth Math Competition',
+      },
+
+      { property: 'og:title', content: 'OMMC' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://ommc.okay.one' },
+      { property: 'og:image', content: '/icon.png' },
+      {
+        property: 'og:description',
+        content: 'Online Monmouth Math Competition',
+      },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/apple-touch-icon.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/favicon-16x16.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/favicon-32x32.png',
+      },
+      { rel: 'author', type: 'text/plain', href: '/humans.txt' },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
@@ -22,9 +56,6 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [{ src: '~assets/css/main.scss', lang: 'scss' }],
-
-  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [{ src: '~plugins/particles.ts', mode: 'client' }],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -44,11 +75,24 @@ export default {
 
   // pwa settings (https://pwa.nuxtjs.org/manifest)
   pwa: {
+    meta: {
+      theme_color: '#ffffff',
+    },
+
     manifest: {
-      lang: 'en',
-      dir: 'ltr',
-      start_url: '/',
       useWebmanifestExtension: true,
+      icons: [
+        {
+          src: '/android-chrome-192x192.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          src: '/android-chrome-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+      ],
     },
   },
 
@@ -65,7 +109,7 @@ export default {
       },
     },
 
-    // test the tests lol
+    // test the tests
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
