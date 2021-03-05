@@ -1,8 +1,8 @@
 import { shallowMount } from '@vue/test-utils'
-import navbar from '@/components/navbar.vue'
+import Navbar from '~/components/Navbar.vue'
 
 describe('navbar', () => {
-  const { vm } = shallowMount(navbar)
+  const { vm } = shallowMount(Navbar)
 
   it('renders successfully', () => expect(vm).toBeTruthy())
 
