@@ -12,7 +12,7 @@ module.exports = {
   },
   collectCoverage: true,
   collectCoverageFrom: [
-    '<rootDir>/components/**/{!(fade-in),}.vue',
+    '<rootDir>/components/**/{!(FadeIn),}.vue',
     '<rootDir>/pages/**/*.vue',
   ],
 }
