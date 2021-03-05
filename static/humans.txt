@@ -1,4 +1,28 @@
+/* META */
+Site: https://ommc.okay.one
+Twitter: https://twitter.com/officialommc
+Location: Monmouth County, New Jersey
+Email: ommcofficial@gmail.com
+
+/* TEAM */
+Administrators: Evan Chang, Ishaan Akula, Bill Fei
+Web Development: Anish Pallati, Kevin Liu, Nikhil Osuri, Ayush Bobra, Katherine Fang
+Social Media: Advika Vuppala, Ananya Vuppala, Sharabh Ohja, Arhan Nagavelli, Ranvith Adulla, Xhaiden D'Souza
+Test Writers: Kevin Liu, Calvin Wang, Alexander Wang, Nicholas Winschel
+Test Solvers: Terry Guo, Xiang Meng, Jack Ma, Emma Luo, AJ LaMotta
+
+/* THANKS */
+Sponsors:
+    Art of Problem Solving: https://artofproblemsolving.com/
+    Maplesoft: https://www.maplesoft.com/
+    Wolfram: https://www.wolfram.com/
+Partners:
+    Buzz Online: https://www.buzzonline.org/
+
 /* SITE */
-    Last update: 2021/01/12
-    Language: English
-    IDE: Atom
+Language: English
+Last update: 2021/03/03
+Standards: HTML5, CSS3
+Components: Bulma, Nuxt, Vue, Jest
+Software: Visual Studio Code     
+IDE: Visual Studio Code
