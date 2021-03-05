@@ -27,8 +27,7 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "bulma": "^0.9.1",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.6",
-    "particles.vue": "^2.1.11"
+    "nuxt": "^2.14.6"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.6",
