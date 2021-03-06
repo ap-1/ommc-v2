@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import Navbar from '~/components/Navbar.vue'
+import Navbar from '~/components/navbar.vue'
 
 describe('navbar', () => {
   const { vm } = shallowMount(Navbar)

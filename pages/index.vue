@@ -60,8 +60,8 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import Navbar from '~/components/Navbar.vue'
-import FadeIn from '~/components/FadeIn.vue'
+import Navbar from '~/components/navbar.vue'
+import FadeIn from '~/components/fade-in.vue'
 
 export default Vue.extend({
   name: 'Home',
