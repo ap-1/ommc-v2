@@ -1,15 +1,5 @@
 $brand-spacing: 3rem;
 
-#particles {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-}
-
-canvas {
-  display: block;
-}
-
 [no-select] {
   cursor: default;
   user-select: none;
@@ -25,7 +15,7 @@ canvas {
   margin-right: calc(#{$brand-spacing} / -2);
 
   font-size: 8rem;
-  text-shadow: 0 5px 10px #212121;
+  text-shadow: 3px 3px 10px #212121;
   letter-spacing: $brand-spacing;
 }
 
@@ -44,6 +34,7 @@ canvas {
 }
 
 .down-icon {
+  color: black !important;
   margin-top: 0.5rem;
   margin-left: 0.5rem;
 

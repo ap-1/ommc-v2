@@ -4,36 +4,32 @@
 @import '~bulma/sass/utilities/initial-variables';
 
 $primary: #c9424b;
+$scheme-main: #2A2B2E;
 
 @import '~bulma';
 
 * {
   scrollbar-width: thin;
   scroll-behavior: smooth;
-  scrollbar-color: #4d4d4d #d6d6d6;
+  scrollbar-color: #d6d6d6 #4d4d4d;
 
   &::-webkit-scrollbar {
     width: 10px;
   }
 
   &::-webkit-scrollbar-track {
-    background: #d6d6d6;
+    background: #4d4d4d;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #4d4d4d;
-    border: 2px solid #d6d6d6;
-    border-radius: 99px;
+    background-color: #d6d6d6;
+    // border: 1px solid #4d4d4d;
   }
-}
-
-#particles,
-[no-select] {
-  cursor: crosshair !important;
 }
 
 // REVIEW: https://codepen.io/kathykato/pen/zYYRGRQ
 [data-content] {
+  color: white;
   overflow: hidden;
   position: relative;
   display: inline-block;
