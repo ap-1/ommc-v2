@@ -28,6 +28,7 @@ export default {
       },
     ],
     link: [
+      { rel: 'author', type: 'text/plain', href: '/humans.txt' },
       { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'apple-touch-icon',
@@ -46,7 +47,6 @@ export default {
         sizes: '32x32',
         href: '/favicon-32x32.png',
       },
-      { rel: 'author', type: 'text/plain', href: '/humans.txt' },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
