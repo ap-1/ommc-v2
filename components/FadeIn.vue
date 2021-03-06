@@ -3,7 +3,7 @@
     <div :id="title" class="hero-body">
       <div class="container">
         <div
-          class="columns is-flex is-vcentered fade-in"
+          class="columns is-centered is-flex fade-in"
           :class="inViewport && 'activated'"
         >
           <slot name="content"></slot>
