@@ -1,4 +1,4 @@
-<a href="https://ommc.okay.one">
+<a href="https://ommc.netlify.app">
   <img
     src="https://bulma.io/images/made-with-bulma.png"
     alt="Made with Bulma"

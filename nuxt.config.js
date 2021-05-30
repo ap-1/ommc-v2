@@ -73,10 +73,25 @@ export default {
   // https://github.com/nuxt-community/style-resources-module
   styleResources: { scss: ['~assets/css/main.scss'] },
 
-  // pwa settings (https://pwa.nuxtjs.org/manifest)
+  // https://pwa.nuxtjs.org/manifest
   pwa: {
+    // https://www.pwabuilder.com
     meta: {
+      scope: '/',
+      start_url: '/',
+      orientation: 'any',
+      display: 'minimal-ui',
       theme_color: '#ffffff',
+      background_color: '#ffffff',
+      categories: ['education, kids', 'mathematics', 'contests'],
+      shortcuts: [
+        {
+          url: '/home',
+          name: 'Go home',
+          short_name: 'Home',
+          description: 'Visit the home page',
+        },
+      ],
     },
 
     manifest: {
@@ -94,10 +109,34 @@ export default {
         },
       ],
     },
+
+    workbox: {
+      enabled: true,
+      workboxExtensions: '@/plugins/sw-background-sync.js',
+      preCaching: [
+        'icon.png',
+        'favicon.ico',
+        'favicon-16x16.png',
+        'favicon-32x32.png',
+        'apple-touch-icon.png',
+        'android-chrome-192x192.png',
+        'android-chrome-512x512.png',
+        'humans.txt',
+        'robots.txt',
+      ].map((file) => '@/static/' + file),
+    },
+  },
+
+  oneSignal: {
+    init: {
+      appId: 'c258f4e3-aad1-4468-a429-e487dfe45640',
+      allowLocalhostAsSecureOrigin: true,
+      autoResubscribe: true,
+    },
   },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [],
+  modules: ['@nuxtjs/onesignal', '@nuxtjs/pwa'],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
@@ -109,7 +148,6 @@ export default {
       },
     },
 
-    // test the tests
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
